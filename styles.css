@@ -1,0 +1,26 @@
+
+/* Dropdown nav */
+.nav-dropdown{ position:relative; }
+.nav-dropmenu{
+  position:absolute;
+  right:0;
+  top:48px;
+  min-width: 210px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(27,27,29,0.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 45px rgba(23,23,26,0.12);
+  padding:8px;
+  display:none;
+  z-index:30;
+}
+.nav-dropmenu.open{ display:block; }
+.nav-dropitem{
+  display:block;
+  padding:10px 10px;
+  border-radius: 12px;
+  color: rgba(27,27,29,0.85);
+}
+.nav-dropitem:hover{
+  background: rgba(90,11,31,0.08);
+}
