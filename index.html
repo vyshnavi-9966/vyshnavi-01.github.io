@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vyshnavi Veeravalli – Academic Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand-title">VYSHNAVI VEERAVALLI</div>
+        <div class="brand-subtitle">M.Sc. Process Safety & Environmental Engineering · Germany</div>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-link" href="#top">Home</a>
+
+        <!-- Dropdown menu -->
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+            Sections ▾
+          </button>
+          <div class="nav-dropmenu" role="menu">
+            <a class="nav-dropitem" href="#certificates">Certificates</a>
+            <a class="nav-dropitem" href="#projects">Project Reports</a>
+            <a class="nav-dropitem" href="#academic">Academic Docs</a>
+            <a class="nav-dropitem" href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- Landing / Intro -->
+    <section class="hero">
+      <h1>Academic Portfolio</h1>
+      <p>
+        A curated, view-focused portfolio for recruitment and academic review.
+        Documents are embedded via Google Drive preview links.
+      </p>
+
+      <div class="notice">
+        <strong>Note:</strong> View-focused embed. No web method can fully prevent screenshots.
+      </div>
+
+      <!-- Search + filters -->
+      <div class="search-row">
+        <input id="q" class="search" type="search" placeholder="Search (e.g., SAP, ISO, LCA, Aspen)..." />
+        <button class="tag active" data-filter="all" type="button">All</button>
+        <button class="tag" data-filter="cert" type="button">Certificates</button>
+        <button class="tag" data-filter="proj" type="button">Project Reports</button>
+        <button class="tag" data-filter="acad" type="button">Academic Docs</button>
+      </div>
+    </section>
+
+    <!-- Certificates -->
+    <section class="card" id="certificates">
+      <div class="section-bar cert"></div>
+      <div class="section-head">
+        <h2 class="section-title">Certificates</h2>
+        <div class="section-sub">Training, standards, tools</div>
+      </div>
+      <div class="grid" id="grid-cert"></div>
+    </section>
+
+    <!-- Projects -->
+    <section class="card" id="projects">
+      <div class="section-bar proj"></div>
+      <div class="section-head">
+        <h2 class="section-title">Project Reports</h2>
+        <div class="section-sub">Selected academic work</div>
+      </div>
+      <div class="grid" id="grid-proj"></div>
+    </section>
+
+    <!-- Academic Docs -->
+    <section class="card" id="academic">
+      <div class="section-bar acad"></div>
+      <div class="section-head">
+        <h2 class="section-title">Academic Documents</h2>
+        <div class="section-sub">Transcripts, certificates, selected documents</div>
+      </div>
+      <div class="grid" id="grid-acad"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <div class="section-bar"></div>
+      <div class="section-head">
+        <h2 class="section-title">Contact</h2>
+        <div class="section-sub">Recruitment & academic enquiries</div>
+      </div>
+
+      <div class="contact">
+        <div><strong>Email:</strong> vyshnaviveeravalli2@gmail.com</div>
+        <div><strong>LinkedIn:</strong> linkedin.com/in/vyshnavi-veeravalli/</div>
+        <div><strong>Location:</strong> Germany</div>
+        <div><strong>Focus:</strong> Process Safety · HSE · Explosion Protection</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        © <span id="year"></span> Vyshnavi Veeravalli · View-focused portfolio
+      </div>
+    </footer>
+  </main>
+
+  <!-- Viewer Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true">
+      <div class="modal-bar">
+        <div id="modalTitle" class="modal-title">Document</div>
+        <button id="closeBtn" class="modal-close" type="button">Close</button>
+      </div>
+      <iframe id="modalFrame" class="modal-iframe" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function normalizeDriveUrl(url){
+      if (!url) return '';
+      const u = String(url).trim();
+      const idMatch1 = u.match(/\/file\/d\/([^\/\?]+)/);
+      if (idMatch1 && idMatch1[1]) return `https://drive.google.com/file/d/${idMatch1[1]}/preview`;
+      const idMatch2 = u.match(/[?&]id=([^&]+)/);
+      if (idMatch2 && idMatch2[1]) return `https://drive.google.com/file/d/${idMatch2[1]}/preview`;
+      return u;
+    }
+
+    function escapeHtml(s){
+      return String(s ?? '')
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'","&#039;");
+    }
+
+    function cardTemplate(item){
+      const type = item.type;
+      const title = escapeHtml(item.title || 'Untitled');
+      const meta = escapeHtml(item.meta || 'PDF · View-only embed');
+      const tags = Array.isArray(item.tags) ? item.tags : [];
+      const tagText = tags.length ? ` · Tags: ${escapeHtml(tags.join(', '))}` : '';
+      const src = normalizeDriveUrl(item.url || '');
+
+      return `
+        <div class="doc-card" data-type="${escapeHtml(type)}" data-title="${title}">
+          <div class="doc-title">${title}</div>
+          <div class="doc-meta">${meta}${tagText}</div>
+          <div class="doc-actions">
+            <button class="btn btn-primary" type="button"
+              data-view-title="${title}"
+              data-src="${escapeHtml(src)}">View</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Viewer modal
+    const modal = document.getElementById('modal');
+    const modalFrame = document.getElementById('modalFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeBtn = document.getElementById('closeBtn');
+
+    function openModal(title, src){
+      modalTitle.textContent = title;
+      modalFrame.src = normalizeDriveUrl(src);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    }
+    function closeModal(){
+      modalFrame.src = '';
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-src]');
+      if (btn) openModal(btn.dataset.viewTitle, btn.dataset.src);
+      if (e.target === modal) closeModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    // Search + filter
+    const q = document.getElementById('q');
+    const filterTags = Array.from(document.querySelectorAll('.tag'));
+    let currentFilter = 'all';
+
+    function applySearchFilter(){
+      const needle = (q.value || '').trim().toLowerCase();
+      const cards = Array.from(document.querySelectorAll('.doc-card'));
+      cards.forEach(c => {
+        const type = c.dataset.type;
+        const text = (c.dataset.title || '').toLowerCase() + ' ' + c.innerText.toLowerCase();
+        const okType = (currentFilter === 'all') || (type === currentFilter);
+        const okText = needle === '' || text.includes(needle);
+        c.style.display = (okType && okText) ? '' : 'none';
+      });
+    }
+
+    filterTags.forEach(t => {
+      t.addEventListener('click', () => {
+        filterTags.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+        const f = t.getAttribute('data-filter');
+        currentFilter = (f === 'cert' || f === 'proj' || f === 'acad') ? f : 'all';
+        applySearchFilter();
+      });
+    });
+    q.addEventListener('input', applySearchFilter);
+
+    // Load data.json
+    const gridCert = document.getElementById('grid-cert');
+    const gridProj = document.getElementById('grid-proj');
+    const gridAcad = document.getElementById('grid-acad');
+
+    async function loadAndRender(){
+      try{
+        const res = await fetch('data.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`Cannot load data.json (HTTP ${res.status}).`);
+        const data = await res.json();
+        const items = Array.isArray(data) ? data : [];
+        const clean = items.filter(x => x && typeof x === 'object' && typeof x.type === 'string');
+
+        gridCert.innerHTML = '';
+        gridProj.innerHTML = '';
+        gridAcad.innerHTML = '';
+
+        clean.forEach(item => {
+          const html = cardTemplate(item);
+          if (item.type === 'cert') gridCert.insertAdjacentHTML('beforeend', html);
+          else if (item.type === 'proj') gridProj.insertAdjacentHTML('beforeend', html);
+          else if (item.type === 'acad') gridAcad.insertAdjacentHTML('beforeend', html);
+        });
+
+        applySearchFilter();
+      }catch(err){
+        gridCert.innerHTML = `<div class="notice"><strong>Error:</strong> ${escapeHtml(err.message)}<br/>Ensure <strong>data.json</strong> is in the same folder and valid JSON.</div>`;
+      }
+    }
+    loadAndRender();
+
+    // Dropdown behaviour
+    const dropBtn = document.querySelector('.nav-dropbtn');
+    const dropMenu = document.querySelector('.nav-dropmenu');
+
+    function closeDropdown(){
+      dropBtn?.setAttribute('aria-expanded', 'false');
+      dropMenu?.classList.remove('open');
+    }
+
+    dropBtn?.addEventListener('click', () => {
+      const isOpen = dropMenu.classList.toggle('open');
+      dropBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) closeDropdown();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDropdown();
+    });
+  </script>
+</body>
+</html>
