@@ -1,0 +1,144 @@
+[
+  {
+    "type": "cert",
+    "title": "LEAN Expert",
+    "meta": "Certificate · PDF",
+    "url": "https://drive.google.com/file/d/1VR_afCnofVdCTcTvpjqNEjEXqxvNKsjV/preview",
+    "tags": ["Lean", "Continuous Improvement", "Operations"]
+  },
+  {
+    "type": "cert",
+    "title": "Lean Six Sigma Green Belt",
+    "meta": "Certificate · PDF",
+    "url": "https://drive.google.com/file/d/1KrxNCrHuk2BBLO1BHM7lUh_eRHFw8tkR/preview",
+    "tags": ["Lean Six Sigma", "Green Belt", "Process Improvement", "Quality"]
+  },
+  {
+    "type": "cert",
+    "title": "Betriebs- und Personalräte: Den betrieblichen Arbeitsschutz mitgestalten",
+    "meta": "Certificate · Occupational Safety · PDF",
+    "url": "https://drive.google.com/file/d/1D44CooHtcZrNq-_XDncEnf2VO-MOz52-/preview",
+    "tags": ["Occupational Safety", "Works Council", "Employee Representation", "Arbeitsschutz"]
+  },
+  {
+    "type": "cert",
+    "title": "German Course Participation (B1/B2)",
+    "meta": "Language Certificate · PDF",
+    "url": "https://drive.google.com/file/d/1ZvMz68uqeUxk52qx0Kg22RgVOJIfy0u4/preview",
+    "tags": ["German", "Language", "B1", "B2"]
+  },
+  {
+    "type": "cert",
+    "title": "Kompetenzprofil: Stärken erkennen, berufliche Zukunft gestalten",
+    "meta": "Professional Development Certificate · PDF",
+    "url": "https://drive.google.com/file/d/1U7pfAgosp5KBUnLrpHZpPjIDNb7Q-2lm/preview",
+    "tags": ["Professional Development", "Competency Profile", "Career Planning"]
+  },
+  {
+    "type": "cert",
+    "title": "Professional Work Experience Certificate",
+    "meta": "Work Experience · Industry · PDF",
+    "url": "https://drive.google.com/file/d/1W9f5inWjGkxZ2MMeEd6PwEr3jEsSoHdw/preview",
+    "tags": ["Work Experience", "Industry", "Engineering"]
+  },
+
+  {
+    "type": "proj",
+    "title": "TFAC Gas Handling and Storage – Safety and Environmental Study (HIRA)",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1LEavZcMCC6r7Bho3FX1ySSbaysEwOFE-/preview",
+    "tags": ["Process Safety", "HIRA", "Gas Handling", "Environmental Safety"]
+  },
+  {
+    "type": "proj",
+    "title": "Functional Safety in Industrial Facilities – CyHAZOP Analysis",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1EqmZ5qeWYyvqYW2I0bHw_hAyQVieGbcl/preview",
+    "tags": ["Functional Safety", "CyHAZOP", "Process Hazard Analysis", "Industry"]
+  },
+  {
+    "type": "proj",
+    "title": "Life Cycle Assessment of Hydrogen Production from Ammonia",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1a49nKRG2vDVV5Li6Fujy93YtUM2OSjZg/preview",
+    "tags": ["LCA", "Hydrogen", "Ammonia", "Sustainability"]
+  },
+  {
+    "type": "proj",
+    "title": "SEVESO III Directive – Industrial Safety and Risk Assessment",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1V2LIMM3CYevZlGS0x4TdXKSBg0AgeOcX/preview",
+    "tags": ["SEVESO III", "Industrial Safety", "Risk Assessment", "Regulation"]
+  },
+  {
+    "type": "proj",
+    "title": "Numerical Simulation of Industrial Explosion Scenarios (OpenFOAM)",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1fhFyBIQ4ThVcCzm-KbTqkJc-SunRBdnm/preview",
+    "tags": ["CFD", "OpenFOAM", "Explosion Simulation", "Process Safety"]
+  },
+  {
+    "type": "proj",
+    "title": "Process Simulation of Allyl Chloride Production (Aspen Plus)",
+    "meta": "Project Report · PDF",
+    "url": "https://drive.google.com/file/d/1_9CkQlGLFWMgYZesLB_bWeMWhBcAGwi7/preview",
+    "tags": ["Process Simulation", "Aspen Plus", "Chemical Engineering"]
+  },
+ {
+  "type": "proj",
+  "title": "Adsorption of Chromium (VI) from Water",
+  "meta": "Bachelor Thesis · Full Semester Internship Report · PDF",
+  "url": "https://drive.google.com/file/d/1imhgw3hgx9EE2R2XUPiFu8xAtlGNMAMF/preview",
+  "tags": [
+    "Bachelor Thesis",
+    "Chemical Engineering",
+    "Adsorption",
+    "Water Treatment",
+    "Chromium (VI)"
+  ]
+},
+
+
+  {
+    "type": "acad",
+    "title": "Masters Transcript (Selected)",
+    "meta": "Transcript · PDF · Redacted IDs recommended",
+    "url": "https://drive.google.com/file/d/1IUhaUCtRjaD2cTiJA08wVY0FbdyNfZkH/preview",
+    "tags": ["Transcript", "Masters", "Grades"]
+  },
+  {
+    "type": "acad",
+    "title": "Bachelor’s (uni-assist) – German Grade Conversion",
+    "meta": "Academic Document · PDF",
+    "url": "https://drive.google.com/file/d/17yESKgzJh4OmZA_WPEENCgRt7iNHvpXG/preview",
+    "tags": ["uni-assist", "Grade Conversion", "Bachelor"]
+  },
+  {
+    "type": "acad",
+    "title": "Bachelor’s Grade Sheet (Selected)",
+    "meta": "Transcript · PDF · Redacted IDs recommended",
+    "url": "https://drive.google.com/file/d/1yqJHRU_eNb8x_c3Twp-yV7ucKdjnZ8lQ/preview",
+    "tags": ["Transcript", "Bachelor", "Grades"]
+  },
+  {
+    "type": "acad",
+    "title": "Bachelor’s Degree Certificate",
+    "meta": "Degree Certificate · PDF",
+    "url": "https://drive.google.com/file/d/1QqwysWvakOSUFXWxFxhMGuRWrHlw79Y8/preview",
+    "tags": ["Degree Certificate", "Bachelor"]
+  },
+  {
+    "type": "acad",
+    "title": "Senior Secondary Education (Class XII)",
+    "meta": "Academic Document · PDF",
+    "url": "https://drive.google.com/file/d/16Bp4Y5NZI2BwDci6kapGK02r5X4l4Ozz/preview",
+    "tags": ["School", "Senior Secondary", "Class XII"]
+  },
+  {
+    "type": "acad",
+    "title": "Secondary School Education (Class X)",
+    "meta": "Academic Document · PDF",
+    "url": "https://drive.google.com/file/d/1yqku-qErBPlA-S5_YFsysuI-ZD1Nmy_2/preview",
+    "tags": ["School", "Secondary", "Class X"]
+  }
+]
